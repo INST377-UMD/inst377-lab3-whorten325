@@ -1,77 +1,44 @@
-/* External CSS file (styles.css) */
+/* styles.css - simplified summer theme (no variables/imports) */
 
-/* Import a custom font */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
-
-:root{
-  --page-bg: #fff9e6;       /* light sandy yellow background */
-  --banner-bg: #ff7f50;     /* coral/orange for header/footer */
-  --banner-text: #ffffff;   /* white text for contrast */
-  --panel-bg: #e6ffe6;      /* fresh light green for main panel */
-  --sidebar-bg: #87ceeb;    /* sky blue for sidebar */
-  --sidebar-hover: #00bfff; /* deep turquoise blue when hovered */
-  --text-color: #333;       /* dark gray text for readability */
-  --accent: #ffd700;        /* golden accent (sunshine) */
-}
-
-/* Body styling */
-body{
+body {
   margin: 0;
   padding: 20px;
-  background: var(--page-bg);
-  font-family: 'Quicksand', Arial, sans-serif; /* custom summer font */
-  color: var(--text-color);
+  background: #fff9e6; /* sandy yellow */
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
   text-align: center;
 }
 
-/* Header and footer share same class .banner */
-.banner{
-  background: var(--banner-bg);
-  color: var(--banner-text);
+/* Header & Footer (same class) */
+.banner {
+  background: #ff7f50; /* coral */
+  color: #ffffff;
   padding: 14px 20px;
   margin: 10px auto;
   border-radius: 6px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.12);
 }
 
-.banner h1{
+.banner h1 {
   margin: 0;
   font-size: 1.5rem;
-  text-align: center;
 }
 
 /* Navigation */
-nav{
-  margin: 10px 0 20px 0;
-}
-.nav-list{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  align-items: center;
-}
-.nav-list li{
-  display: inline-block;
-}
-.nav-list a{
+nav { margin: 10px 0 20px 0; }
+nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 12px; justify-content: center; }
+nav a {
   text-decoration: none;
   padding: 8px 14px;
   border-radius: 20px;
-  background: var(--accent);
+  background: #ffd700; /* sunshine */
   color: #333;
   font-weight: 600;
-  transition: all 0.2s ease-in-out;
 }
-.nav-list a:hover{
-  background: #ffec99; /* lighter golden yellow */
-  transform: translateY(-3px);
-}
+nav a:hover { background: #ffec99; transform: translateY(-3px); }
 
-/* Content area */
-.content{
+/* Layout container (flex) */
+.content {
   display: flex;
   gap: 20px;
   align-items: flex-start;
@@ -80,93 +47,69 @@ nav{
   margin: 0 auto;
 }
 
-.main{
-  width: 68%;
-  box-sizing: border-box;
-}
+/* Percentage widths so sidebar & main stay on one line */
+.main { width: 68%; box-sizing: border-box; }
+.sidebar { width: 25%; box-sizing: border-box; }
 
-.sidebar{
-  width: 25%;
-  box-sizing: border-box;
-}
-
-/* Panels */
-.panel{
-  background: var(--panel-bg);
+/* Panels with margin + padding */
+.panel {
+  background: #e6ffe6; /* light green */
   padding: 16px;
   border-radius: 10px;
   margin: 8px 0;
   text-align: left;
-  border: 2px solid var(--accent);
+  border: 2px solid #ffd700; /* golden border accent */
 }
 
-/* Sidebar rules */
-.sidebar .panel{
-  background: var(--sidebar-bg);
+/* Sidebar special colors + hover */
+.sidebar .panel {
+  background: #87ceeb; /* sky blue */
 }
-.sidebar .panel:hover{
-  background: var(--sidebar-hover);
-  color: white;
+.sidebar .panel:hover {
+  background: #00bfff; /* turquoise on hover */
+  color: #fff;
 }
 
-/* Form */
-form#rps-form{
-  display: block;
-  margin-top: 10px;
-}
-form label{
-  display: inline-block;
-  margin: 6px 8px 6px 0;
-  font-weight: 600;
-}
-form input[type="text"]{
+/* Form inputs (focus expands) */
+form#rps-form { margin-top: 10px; }
+form label { display: inline-block; margin: 6px 8px 6px 0; font-weight: 600; }
+input[type="text"] {
   width: 150px;
   padding: 6px 8px;
-  border: 2px solid var(--accent);
+  border: 2px solid #ffd700;
   border-radius: 6px;
-  transition: width 0.25s ease, border-color 0.2s ease;
+  transition: width 0.25s ease;
 }
-form input[type="text"]:focus{
+input[type="text"]:focus {
   width: 260px;
   outline: none;
-  border-color: coral;
-  box-shadow: 0 0 6px rgba(255,127,80,0.6);
+  box-shadow: 0 0 6px rgba(255,127,80,0.4);
 }
-form select{
+select {
   padding: 6px 8px;
   border-radius: 6px;
-  border: 2px solid var(--accent);
+  border: 2px solid #ffd700;
   margin-right: 6px;
 }
-button{
+
+/* Button */
+button {
   margin-top: 12px;
   padding: 8px 14px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 700;
-  background: var(--banner-bg);
-  color: white;
-  transition: background 0.2s ease;
+  background: #ff7f50;
+  color: #fff;
 }
-button:hover{
-  background: #ff6347; /* tomato red */
-}
+button:hover { background: #ff6347; }
 
-/* Footer */
-.footer-note p{
-  margin: 0;
-  font-size: 0.9rem;
-  opacity: 0.95;
-}
+/* Footer paragraph (still .banner) */
+.footer-note p { margin: 0; font-size: 0.9rem; }
 
-/* Responsive */
-@media (max-width: 760px){
-  .content{
-    flex-direction: column;
-    padding: 0 8px;
-  }
-  .main, .sidebar{
-    width: 100%;
-  }
+/* Responsive: stack on small screens */
+@media (max-width: 760px) {
+  .content { flex-direction: column; padding: 0 8px; }
+  .main, .sidebar { width: 100%; }
 }

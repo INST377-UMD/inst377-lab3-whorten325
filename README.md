@@ -4,3 +4,6 @@
 # Name (Please Input your name): Wyatt Horten
 
 # Comments: 
+
+This is a simple Rock-Paper-Scissors web page built for Lab 3.  
+It demonstrates HTML structure, external CSS styling, and interactive form behavior.

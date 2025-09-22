@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lab 3 - Rock Paper Scissors</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header (uses same class as footer) -->
+  <div class="banner">
+    <h1>Lab 3 — Rock Paper Scissors</h1>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <ul class="nav-list">
+      <li><a href="https://www.yahoo.com" target="_blank" rel="noopener">Yahoo Finance</a></li>
+      <li><a href="https://www.github.com" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Rock_paper_scissors" target="_blank" rel="noopener">Rules</a></li>
+    </ul>
+  </nav>
+
+  <!-- Body: main + sidebar inside one line (flex) -->
+  <div class="content">
+    <main class="main">
+      <section class="panel">
+        <h2>Please choose one of the following.</h2>
+
+        <form id="rps-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required placeholder="Enter name">
+
+          <label for="choice">Your choice:</label>
+          <select id="choice" name="choice">
+            <option value="rock">Rock</option>
+            <option value="paper">Paper</option>
+            <option value="scissors">Scissors</option>
+          </select>
+
+          <br>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="panel rules">
+        <h3>Rules</h3>
+        <p>You must choose Rock, Paper or Scissors</p>
+        <h4>The Combos are as follows:</h4>
+        <ul>
+          <li>Rock beats Scissors</li>
+          <li>Scissors beats Paper</li>
+          <li>Paper beats Rock</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer (shares .banner class) -->
+  <div class="banner footer-note">
+    <p>This is a footer, maybe I should make it interesting, but I am pretty boring.</p>
+  </div>
+
+</body>
+</html>
